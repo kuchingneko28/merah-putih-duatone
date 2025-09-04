@@ -53,6 +53,7 @@
 
       let origBitmap = null;
       let showOriginal = false;
+      let originalName = "image";
 
       async function render() {
         if (!origBitmap) return;
@@ -85,6 +86,7 @@
 
       async function loadFromFile(file) {
         if (!file || !file.type.startsWith("image/")) return;
+        originalName = file.name.replace(/\.[^/.]+$/, ""); // strip extension
         const url = URL.createObjectURL(file);
         const img = new Image();
         img.onload = async () => {
@@ -136,7 +138,7 @@
         if (!canvas.width || !canvas.height) return;
         const a = document.createElement("a");
         a.href = canvas.toDataURL("image/png");
-        a.download = "bendera-merah-putih.png";
+        a.download = `${originalName}-edit.png`; // <-- dynamic name
         a.click();
       });
 
