@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+:root {
+  --bg: #0f1115;
+  --fg: #e7eaf0;
+  --muted: #9aa3b2;
+  --accent: #ef233c;
+  --card: #151923;
+  --border: #222635;
+  --btn: #1f2433;
+  --btnHover: #2a3044;
+  --font-family: "Plus Jakarta Sans", sans-serif;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--bg);
+  color: var(--fg);
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrap {
+  max-width: 960px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.flag {
+  width: 28px;
+  height: 18px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: linear-gradient(#ff0000 50%, #ffffff 50%);
+}
+h1 {
+  margin: 0;
+  font-size: 20px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+.panel {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.drop {
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: var(--muted);
+}
+.drop.drag {
+  border-color: var(--accent);
+  color: var(--fg);
+}
+.drop p {
+  margin-bottom: 10px;
+}
+
+.hidden-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.btn {
+  display: inline-block;
+  border: 1px solid var(--border);
+  background: var(--btn);
+  color: var(--fg);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn:hover {
+  background: var(--btnHover);
+}
+.btn.primary {
+  background: var(--accent);
+  border: none;
+}
+.btn.primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+small.hint {
+  color: var(--muted);
+  display: block;
+  margin-top: 8px;
+}
+.preview {
+  margin-top: 16px;
+}
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #0b0d12;
+  border-radius: 12px;
+}
+
+.sidebar {
+  align-self: start;
+}
+
+.footer {
+  text-align: center;
+  margin: 24px 0;
+  color: #888;
+  font-size: 14px;
+}
+
+.footer .love {
+  color: var(--accent);
+}
+
+.footer a {
+  color: var(--muted);
+}
