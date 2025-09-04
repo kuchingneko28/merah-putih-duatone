@@ -31,12 +31,21 @@ a {
   margin: 32px auto;
   padding: 0 16px;
 }
+.brand-wrap {
+  margin-bottom: 20px;
+}
+
 .brand {
   display: flex;
-  align-items: center;
   gap: 12px;
-  margin-bottom: 16px;
 }
+
+.tagline {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
 .flag {
   width: 28px;
   height: 18px;
@@ -44,6 +53,7 @@ a {
   border-radius: 3px;
   background: linear-gradient(#ff0000 50%, #ffffff 50%);
 }
+
 h1 {
   margin: 0;
   font-size: 20px;
@@ -149,14 +159,15 @@ canvas {
 .footer {
   text-align: center;
   margin: 24px 0;
-  color: #888;
   font-size: 14px;
+  color: var(--muted);
 }
-
-.footer .love {
+.footer a {
   color: var(--accent);
 }
-
-.footer a {
-  color: var(--muted);
+.footer a:hover {
+  text-decoration: underline;
+}
+.love {
+  color: var(--accent);
 }

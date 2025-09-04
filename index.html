@@ -7,9 +7,12 @@
   </head>
   <body>
     <div class="wrap">
-      <div class="brand">
-        <div class="flag" aria-hidden="true"></div>
-        <h1>Merah Putih Duotone</h1>
+      <div class="brand-wrap">
+        <div class="brand">
+          <div class="flag" aria-hidden="true"></div>
+          <h1>Merah Putih Duotone</h1>
+        </div>
+        <p class="tagline">Convert your photo into red–white duotone inspired by the Indonesian flag.</p>
       </div>
 
       <div class="card">
@@ -77,7 +80,7 @@
             g = d[i + 1],
             b = d[i + 2];
 
-          const t = (0.299 * r + 0.587 * g + 0.114 * b) / 255; // luminance 0..1
+          const t = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
 
           d[i] = Math.round(RED.r + (WHITE.r - RED.r) * t);
           d[i + 1] = Math.round(RED.g + (WHITE.g - RED.g) * t);
@@ -88,7 +91,13 @@
       }
 
       async function loadFromFile(file) {
-        if (!file || !file.type.startsWith("image/")) return;
+        if (!file) return;
+
+        if (!file.type.startsWith("image/")) {
+          alert("Please upload a valid image file.");
+          return;
+        }
+
         originalName = file.name.replace(/\.[^/.]+$/, "");
         const url = URL.createObjectURL(file);
         const img = new Image();
